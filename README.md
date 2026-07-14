@@ -37,7 +37,7 @@ Frontend: Nginx
 Backend: Python Flask
 Database: MySQL
 
-* Then I have taken the one Ec2 Instance and installed requirements like
+* Then I have taken the one Ec2 Instance and installed required softwares
 -> Docker
 -> docker compose
 Then i have created a directory called voting app by using the command like
