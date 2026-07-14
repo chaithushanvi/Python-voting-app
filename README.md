@@ -2,7 +2,7 @@ Request Flow of python-voting-app
 ==================================
 User
  │
- │ 1. Opens http://localhost
+ │ 1. Opens http://localhos
  ▼
 Nginx (web)
  │
