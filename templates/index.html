@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voting App</title>
+</head>
+
+<body>
+
+<h1>Online Voting Application</h1>
+
+<form action="/vote" method="POST">
+
+    <input type="radio" name="candidate" value="Python" required> Python<br><br>
+
+    <input type="radio" name="candidate" value="Java"> Java<br><br>
+
+    <input type="radio" name="candidate" value="DevOps"> DevOps<br><br>
+
+    <button type="submit">Vote</button>
+
+</form>
+
+{% if result %}
+
+<h2>Voting Result</h2>
+
+<table border="1">
+
+<tr>
+<th>Candidate</th>
+<th>Votes</th>
+</tr>
+
+{% for row in result %}
+
+<tr>
+
+<td>{{row[0]}}</td>
+
+<td>{{row[1]}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</body>
+</html>
