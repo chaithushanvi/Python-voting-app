@@ -1,31 +1,34 @@
-Architecture of python-voting-app
+Request Flow of python-voting-app
 ==================================
-
-                User Browser
-                       |
-                       | HTTP Request
-                       v
-              +------------------+
-              |      Nginx       |
-              |   (web service)  |
-              |     Port 80      |
-              +------------------+
-                       |
-                       | Proxy Pass
-                       v
-              +------------------+
-              |      Flask       |
-              |   (app service)  |
-              |     Port 5000    |
-              +------------------+
-                       |
-                       | MySQL Connection
-                       v
-              +------------------+
-              |      MySQL       |
-              |    (db service)  |
-              |     Port 3306    |
-              +------------------+
+User
+ │
+ │ 1. Opens http://localhost
+ ▼
+Nginx (web)
+ │
+ │ 2. Receives HTTP request
+ │
+ │ 3. Forwards request to Flask
+ ▼
+Flask (app)
+ │
+ │ 4. Processes vote
+ │
+ │ 5. Stores/Retrieves vote
+ ▼
+MySQL (db)
+ │
+ │ 6. Returns voting data
+ ▼
+Flask
+ │
+ │ 7. Sends HTML response
+ ▼
+Nginx
+ │
+ │ 8. Returns web page
+ ▼
+User Browser
 ==================================================
 Docker compose voting Application
 ==================================
