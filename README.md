@@ -66,4 +66,79 @@ After creating the docker compose file i have run the command like
 once everything run successfuly you can access the site from the web
   http://publicip:5000
 
-  jhsgd sf siSH
+
+  CI-CD Project
+===============================
+Project: Python Voting Application CI/CD Pipeline
+
+tools Used:
+* Git
+* Jenkins
+* Docker
+* Docker Compose
+* Docker Hub
+* linux
+* AWS EC2
+1. GITHUB Source Code Management
+The applicataion source code is stored in github, This repository contains docker file, docker compose file, and jenkins file and python code
+
+Work Flow
+Developer → GitHub Repository
+
+2. Webhook Integration
+I configured a GitHub webhook to automatically trigger the Jenkins pipeline whenever code is pushed to the repository. This automates the build, deployment, and Docker image push process without any manual intervention.
+
+Webhooks workflow
+===============
+GitHub Push
+    ↓
+GitHub Webhook
+    ↓
+Jenkins Trigger
+
+webhook url
+http://jenkinsIp:8080/github-webhook/
+3. Jenkins CI Pipeline
+========================
+Jenkins countniously Integrate the application building and deploying whenever code changes are pushed
+
+Pipeline stages:
+* Check out the code: Jenkins pulls the latest code from GitHub.
+* Docker Image Build: Jenkins uses the Dockerfile to create a Docker image.
+* Docker Hub Push: After building the image, Jenkins authenticates with Docker Hub and pushes the image.
+4. Application Deployment
+==========================
+Jenkins deploys the application using Docker Compose.
+
+
+Challenges Faced
+=====================
+Jenkins Docker permission issues
+Docker Compose installation issues
+Jenkins user not in docker group
+Webhook configuration
+Container deployment troubleshooting
+
+
+Deployment Workflow
+======================
+Developer Pushes Code
+          ↓
+GitHub Repository
+          ↓
+GitHub Webhook
+          ↓
+Jenkins Pipeline Triggered
+          ↓
+Source Code Checkout
+          ↓
+Docker Image Build
+          ↓
+Push Image to Docker Hub
+          ↓
+Docker Compose Deployment
+          ↓
+Application Available to Users
+
+
+
