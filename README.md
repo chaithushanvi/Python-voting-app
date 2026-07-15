@@ -72,7 +72,7 @@ once everything run successfuly you can access the site from the web
 Project: Python Voting Application CI/CD Pipeline
 
 tools Used:
-* Git
+* Git, Github
 * Jenkins
 * Docker
 * Docker Compose
