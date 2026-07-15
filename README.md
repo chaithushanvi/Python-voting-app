@@ -65,3 +65,5 @@ After creating the docker compose file i have run the command like
 
 once everything run successfuly you can access the site from the web
   http://publicip:5000
+
+  jhsgd sf siSH
